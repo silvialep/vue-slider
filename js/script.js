@@ -62,7 +62,11 @@ createApp({
             } else {
                 this.activeImageIndex++;
             }
-        }
+        },
+
+        createThumb() {
+            
+        },
     }
 
 
