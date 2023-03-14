@@ -64,9 +64,7 @@ createApp({
             }
         },
 
-        createThumb() {
-            
-        },
+        
     }
 
 
