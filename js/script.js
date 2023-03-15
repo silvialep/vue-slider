@@ -40,7 +40,7 @@ createApp({
 
     methods: {
         prevImage() {
-            if(this.activeImageIndex == 0) {
+            if(this.activeImageIndex <= 0) {
                 this.activeImageIndex = this.slides.length - 1;
             } else {
                 this.activeImageIndex--;
@@ -49,7 +49,7 @@ createApp({
         },
 
         nextImage() {
-            if (this.activeImageIndex == this.slides.length - 1) {
+            if (this.activeImageIndex >= this.slides.length - 1) {
                 this.activeImageIndex = 0;
             } else {
                 this.activeImageIndex++;
@@ -57,11 +57,12 @@ createApp({
         },
 
         autoPlay() {
-            if (this.activeImageIndex == this.slides.length - 1) {
+            if (this.activeImageIndex >= this.slides.length - 1) {
                 this.activeImageIndex = 0;
             } else {
                 this.activeImageIndex++;
             }
+            console.log(this.activeImageIndex);
         },
 
         
@@ -78,8 +79,9 @@ createApp({
     },
 
     
-    beforeMount() {
+    mounted() {
         this.timer = setInterval(this.autoPlay, 3000);
+        console.log(this.activeImageIndex);
     },
 
 
